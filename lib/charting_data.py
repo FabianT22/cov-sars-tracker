@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from lib.api import ApiResponse
+from datetime import date
 
 class CovidChart:
 
@@ -27,8 +28,9 @@ class CovidChart:
     def return_plot_image(self):
         self.plots()
 
-CovidChart().show_plot()
-# labels = ['Tested Negative', 'Tested Positive']
-# sizes = [ApiResponse().get_nr_positives(), ApiResponse().get_nr_negatives()]
-# fig1, ax1 = plt.subplots()
-# plt.show()
+    def save_plot(self):
+        self.plots()
+        plt.savefig(f"{date.today()}", dpi=300, bbox_inches='tight')
+
+# CovidChart().show_plot()
+CovidChart().save_plot()
