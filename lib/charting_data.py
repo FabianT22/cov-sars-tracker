@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from lib.api import ApiResponse
 from datetime import date
+from os import remove
 
 class CovidChart:
 
@@ -32,5 +33,9 @@ class CovidChart:
         self.plots()
         plt.savefig(f"{date.today()}", dpi=300, bbox_inches='tight')
 
+    def delete_plot(self):
+        remove(f"{date.today()}.png")
+
 # CovidChart().show_plot()
-CovidChart().save_plot()
+# CovidChart().save_plot()
+# CovidChart().delete_plot()
