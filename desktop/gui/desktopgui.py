@@ -44,4 +44,6 @@ class MainGuiWindow:
         sys.exit(app.exec_())
 
 
-MainGuiWindow().start_gui()
+if __name__ == "__main__":
+    MainGuiWindow().start_gui()
+    pass
